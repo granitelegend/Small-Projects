@@ -1,0 +1,17 @@
+# Various function that generates pi, with n iterations
+
+# Testing approximation algorithms for Pi in Python
+
+# Not recommended for practical use. Is very slow.
+
+def leibniz_formula(n):  # Leibniz Formula for Pi
+
+    """
+    Approximates Pi with increasing accuracy using Leibniz formula for Pi
+    Enter a whole number, the higher the more accurate Pi is approximated
+    """
+
+    pi_aprox = 0
+    for x in range(0,n+1):
+        pi_aprox = pi_aprox + ((1/(2 * x + 1)) * (-1) ** x)  # Mathematical formula for nth number in series
+    return 4 * (pi_aprox)
