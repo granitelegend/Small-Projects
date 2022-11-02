@@ -1,4 +1,6 @@
 # Prime Factorization
+# Planned:
+# Wheel Factorization
 
 import math
 
@@ -116,7 +118,10 @@ def brutefermat_prime_factorization(number):  # Combines all previous functions 
     factor_list = [1]
 
     add_factors_list = list(fermat_factorization(number))  # Puts factors using Fermat method into list
-    enumerate_list = sorted(list(set(range(2, number + 1)).difference(set(add_factors_list))))
+
+    # Filters out Fermat factors, in order to perform less calculations with brute-force method
+    enumerate_list = sorted(list(set(range(2, number + 1)).difference(set(add_factors_list)))) 
+    
 
     if number % 2 != 0:
         for divisorNum in enumerate_list:
@@ -126,7 +131,7 @@ def brutefermat_prime_factorization(number):  # Combines all previous functions 
             else:
                 continue
 
-        factor_list  = sorted(factor_list + add_factors_list)
+        factor_list  = sorted(factor_list + add_factors_list)  # Combines list from both factorization methods
         return factor_list
 
     else:
