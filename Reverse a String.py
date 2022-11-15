@@ -1,15 +1,8 @@
 
-def reverse_string(word):
+def reverse_sentence(Word):
     """
-    Reverses string that is input in function.
-    :param word:
+    Reverses a sentence or word.
+    :param Word: str
     :return: str
     """
-
-    word = reversed(list(word))
-    reverse_word = ''
-
-    for x in word:
-        reverse_word += x
-
-    return reverse_word
+    return (''.join(list((Word)[::-1])))
