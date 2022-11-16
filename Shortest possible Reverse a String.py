@@ -1,10 +1,12 @@
 
-# An attempt to find the shortest code to reverse a string
+"""
+An attempt to find the shortest code to reverse a string
+"""
 
-def reverse_sentence(Word):
+def reverse_sentence(word):
     """
     Reverses a sentence or word.
-    :param Word: str
+    :param word: str
     :return: str
     """
-    return (''.join(list((Word)[::-1])))
+    return (''.join(list((word)[::-1])))
