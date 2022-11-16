@@ -24,23 +24,23 @@ def fibo_sequence(number):
     c = 0
 
     # Empty List
-    sequenceFibo = []
+    sequence_fibo = []
 
     # Algorithm
-    for x in range(number):
-        c = b
+    for _ in range(number - 1):
+        c = b                      # Memoriezes initial value of b
         b = b + a
-        sequenceFibo.append(a)
+        sequence_fibo.append(a)
         a = c
 
-    sequenceFibo.append(a)
-    return sequenceFibo
+    sequence_fibo.append(a)
+    return sequence_fibo
 
 
 def fibo_sequence_desired(number):
 
     """
-    Generates sequence till desired number in sequence or until the sequence passes it
+    Generates sequence till desired number in sequence or until the sequence passes it.
     :parameter: (positive) int
     :return: list
     """
@@ -60,14 +60,14 @@ def fibo_sequence_desired(number):
     c = 0
 
     # Empty List
-    sequenceFibo = []
+    sequence_fibo = []
 
     # Algorithm
-    while a != number or a < number:
+    while a != number and a < number:
         c = b
         b = b + a
-        sequenceFibo.append(a)
+        sequence_fibo.append(a)
         a = c
 
-    sequenceFibo.append(a)
-    return sequenceFibo
+    sequence_fibo.append(a)
+    return sequence_fibo
