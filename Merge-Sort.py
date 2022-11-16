@@ -1,6 +1,7 @@
 
 """
 Merge-sort function, any built-in or imported sorting functions or methods are not allowed.
+Currently only works for lists of even length.
 """
 # Design:
 # * A a way to split lists into to several parts and merge them
@@ -35,6 +36,7 @@ slicednumber_list = []
 
 list = [5,2,6,3]
 
+# Slices list into lists of two, [5,2,6,3] -> [[5,2],[6,3]]
 
 while len(list) >= 1:
     slicednumber_list.append(order_switcher(list[:2]))
@@ -44,21 +46,22 @@ while len(list) >= 1:
 print(slicednumber_list)
 
 sorted_list = [1]
-removal_flag = True
-# del is bad
-while sorted_list:
-    if removal_flag:  # Clunky removal of list item to allow while-loop to run
+REMOVAL_FLAG = True
+
+while slicednumber_list:
+
+    if REMOVAL_FLAG:  # Clunky removal of list item to allow while-loop to run
         sorted_list.remove(1)
-        removal_flag = False
+        REMOVAL_FLAG = False
+
     print(sorted_list, slicednumber_list)
     for lesser_list in range(len(slicednumber_list)):
         try:
-            if not slicednumber_list[lesser_list][:]:  # if-block performs removal of empty lists
-                sorted_list.append(slicednumber_list[lesser_list + 1][0])
-                slicednumber_list.remove(slicednumber_list[lesser_list])
-            elif not slicednumber_list[lesser_list + 1][:]:
-                sorted_list.append(slicednumber_list[lesser_list][0])
-                slicednumber_list.remove(slicednumber_list[lesser_list + 1])
+            if [] in slicednumber_list:
+                while [] in slicednumber_list:
+                    slicednumber_list.remove([])
+                sorted_list.append(slicednumber_list[0][0])  # Final list is of form [[x]]
+                del slicednumber_list[0][0]
 
             if slicednumber_list[lesser_list][0] < slicednumber_list[lesser_list + 1][0]:
                 sorted_list.append(slicednumber_list[lesser_list][0])
