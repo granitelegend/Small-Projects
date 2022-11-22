@@ -10,3 +10,11 @@ def reverse_sentence(word):
     :return: str
     """
     return (''.join(list((word)[::-1])))
+
+def reverse_sentence_shortest(word):
+    """
+    Reverses a sentence or word.
+    :param word: str
+    :return: str
+    """
+    return word[::-1]
